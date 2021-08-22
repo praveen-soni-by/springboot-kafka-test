@@ -18,4 +18,17 @@ public class ChatService {
         eventPublisher.send("bot", String.valueOf(number));
     }
 
+    @KafkaListener(topics = "bobby-chat")
+    public void chat2(String payload) {
+        int number = (int) (Math.random() * (8 - 0 + 1) + 0);
+
+        eventPublisher.send("bot", "Hi Bobby Here");
+    }
+
+    @KafkaListener(topics = "lucky-chat")
+    public void chat3(String payload) {
+        int number = (int) (Math.random() * (8 - 0 + 1) + 0);
+        eventPublisher.send("bot", "Hi Lucky Here Here");
+    }
+
 }

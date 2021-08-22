@@ -20,7 +20,7 @@ import com.syscho.kafka.producer.EventPublisher;
 
 @SpringBootTest
 @DirtiesContext
-@EmbeddedKafka(partitions = 1, brokerProperties = { "listeners=PLAINTEXT://localhost:9093", "port=9093" })
+@EmbeddedKafka(partitions = 1, brokerProperties = { "listeners=PLAINTEXT://localhost:9092", "port=9093" })
 class EmbeddedKafkaIntegrationTest {
 
 	@Autowired

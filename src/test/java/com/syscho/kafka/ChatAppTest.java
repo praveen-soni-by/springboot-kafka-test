@@ -31,7 +31,7 @@ class ChatAppTest {
 	void tets() {
 		consumer = defaultKafkaConsumerFactory.createConsumer();
 		consumer.subscribe(Collections.singleton("bot"));
-
+		System.out.println("222222****************************************************************************");
 	}
 
 	void listners() {
@@ -69,6 +69,12 @@ class ChatAppTest {
 		}
 	}
 
+	@Test
+	public void testShouldPublishEventAndConsumse() {
+		producer.send("user-chat", "3");
+		//listners();
+
+	}
 	@Test
 	public void testShouldPublishEventAndConsume() {
 		producer.send("user-chat", "3");
